@@ -7,9 +7,9 @@ const cors = require('cors');
 app.use(bodyParser());
 app.use(cors());
 
-app.use(express.static(__dirname + '/../client/dist'));
-app.use('/*/styles.css', express.static(__dirname + '/../client/dist/styles.css'));
-app.use('/*', express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname + '/../public'));
+app.use('/*/styles.css', express.static(__dirname + '/../public/styles.css'));
+app.use('/*', express.static(__dirname + '/../public'));
 
 app.use((req, res, next) => {
   console.log(`serving a ${req.method} request to ${req.url}.`);
